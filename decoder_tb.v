@@ -23,9 +23,10 @@ module decoder_tb;
     );
 
     initial begin
-        $monitor("Opcode: %h | Format: %b", opcode, instr_type);
-        instruction = 32'h00000000 | `ORR; #10; // FORMAT R
-        instruction = 32'h00000000 | `ORI; #10; // FORMAT I
+        $monitor("Instruction %h -> (rde: %d, opcode: %h, imm: %h func: %h, rs1: %h rs2: %h Format: %b)", instruction, rde, opcode, imm, func, rs1, rs2, instr_type);
+        instruction = 32'h00000401; #10;
+        instruction = 32'h20011410; #10;
+        instruction = 32'h5432FF13; #10;
         $finish;
     end
 endmodule
