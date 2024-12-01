@@ -23,10 +23,15 @@ module decoder_tb;
     );
 
     initial begin
-        $monitor("Instruction %h -> (rde: %d, opcode: %h, imm: %h func: %h, rs1: %h rs2: %h Format: %b)", instruction, rde, opcode, imm, func, rs1, rs2, instr_type);
-        instruction = 32'h00000401; #10;
-        instruction = 32'h20011410; #10;
-        instruction = 32'h5432FF13; #10;
+        $monitor("Instruction %h -> %b(opcode: %h, rde: %d, imm: %h func: %h, rs1: %h rs2: %h)", 
+                 instruction, instr_type, opcode, rde, imm, func, rs1, rs2);
+
+        // Format B    OPCODE IMM     FUNC
+        instruction = {`INT,  20'h00, 4'h0};                                #10;
+        // Format F    OPCODE IMM     FUNC  RDE
+        instruction = {`LLI,  16'h01, 4'h0, 4'h2};                          #10;
+        // Format E    OPCODE IMM     FUNC  RS2   RS1   RDE
+        instruction = {`LW, 8'hff,    4'h2, 4'h3, 4'h4, 4'h5};              #10;
         $finish;
     end
 endmodule

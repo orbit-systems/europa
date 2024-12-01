@@ -1,125 +1,125 @@
-`define INT     8'h01 //format B
-`define IRET    8'h01 //format B
-`define IRES    8'h01 //format B
-`define WAIT    8'h01 //format B
-`define LCTRL   8'h02 //format F
-`define SCTRL   8'h03 //format F
-`define FLAG    8'h04 //format I
-`define ADDIP   8'h05 //format I
-`define JAL     8'h06 //format I
-`define JALR    8'h07 //format I
-`define RET     8'h08 //format I
-`define RETR    8'h09 //format I
-`define BRA     8'h00 //format B
-`define BEQ     8'h01 //format B
-`define BEZ     8'h02 //format B
-`define BLT     8'h03 //format B
-`define BLE     8'h04 //format B
-`define BLTU    8'h05 //format B
-`define BLEU    8'h06 //format B
-`define BNE     8'h09 //format B
-`define BNZ     8'h0a //format B
-`define BGE     8'h0b //format B
-`define BGT     8'h0c //format B
-`define BGEU    8'h0d //format B
-`define BGTU    8'h0e //format B
-`define PUSH    8'h0b //format I
-`define POP     8'h0c //format I
-`define ENTER   8'h0d //format I
-`define LEAVE   8'h0e //format I
-`define CMP     8'h0f //format I
-`define LLI     8'h10 //format F
-`define LLIP    8'h10 //format F
-`define LNI     8'h11 //format U
-`define LTI     8'h12 //format U
-`define LW      8'h13 //format E
-`define LH      8'h14 //format E
-`define LHS     8'h15 //format E
-`define LQ      8'h16 //format E
-`define LQS     8'h17 //format E
-`define LB      8'h18 //format E
-`define LBS     8'h19 //format E
-`define SW      8'h1a //format E
-`define SH      8'h1b //format E
-`define SQ      8'h1c //format E
-`define SB      8'h1d //format E
-`define LLW     8'h1e //format M
-`define LLH     8'h1e //format M
-`define LLQ     8'h1e //format M
-`define LLB     8'h1e //format M
-`define SCW     8'h1e //format M
-`define SCH     8'h1e //format M
-`define SCQ     8'h1e //format M
-`define SCB     8'h1e //format M
-`define LFENCE  8'h1f //format B
-`define SFENCE  8'h1f //format B
-`define MFENCE  8'h1f //format B
-`define TFLUSHX 8'h1f //format B
-`define TFLUSH  8'h1f //format B
-`define ADDR    8'h20 //format R
-`define ADDI    8'h21 //format I
-`define IADC    8'h22 //format R
-`define UADC    8'h22 //format R
-`define SUBR    8'h23 //format R
-`define SUBI    8'h24 //format I
-`define ISBB    8'h25 //format R
-`define USBB    8'h26 //format R
-`define IMULR   8'h27 //format R
-`define IMULH   8'h28 //format R
-`define IMULI   8'h29 //format I
-`define IDIVR   8'h2a //format R
-`define IDIVI   8'h2b //format I
-`define UMULR   8'h2c //format R
-`define UMULH   8'h2d //format R
-`define UMULI   8'h2e //format I
-`define UDIVR   8'h2f //format R
-`define UDIVI   8'h30 //format I
-`define REMR    8'h31 //format R
-`define REMI    8'h32 //format I
-`define MODR    8'h33 //format R
-`define MODI    8'h34 //format I
-`define ANDR    8'h35 //format R
-`define ANDI    8'h36 //format I
-`define ORR     8'h37 //format R
-`define ORI     8'h38 //format I
-`define NORR    8'h39 //format R
-`define NORI    8'h3a //format I
-`define XORR    8'h3b //format R
-`define XORI    8'h3c //format I
-`define SHL     8'h3d //format R
-`define ASR     8'h3e //format R
-`define LSR     8'h3f //format R
-`define FCMP    8'h40 //format E
-`define FTO     8'h41 //format E
-`define FFROM   8'h42 //format E
-`define FNEG    8'h43 //format E
-`define FABS    8'h44 //format E
-`define FADD    8'h45 //format E
-`define FSUB    8'h46 //format E
-`define FMUL    8'h47 //format E
-`define FDIV    8'h48 //format E
-`define FMA     8'h49 //format E
-`define FSQRT   8'h4a //format E
-`define FMIN    8'h4b //format E
-`define FMAX    8'h4c //format E
-`define FRND    8'h4d //format E
-`define FRNDA   8'h4d //format E
-`define FTRUNC  8'h4d //format E
-`define FCEIL   8'h4d //format E
-`define FFLOOR  8'h4d //format E
-`define FCNV    8'h4e //format E
-`define FCLASS  8'h4f //format E
-`define RORR    8'h50 //format R
-`define RORI    8'h51 //format I
-`define ROLR    8'h52 //format R
-`define ROLI    8'h53 //format I
-`define CSET    8'h54 //format R
-`define CLZ     8'h55 //format R
-`define CTZ     8'h56 //format R
-`define EXT     8'h57 //format R
-`define DEP     8'h58 //format R
-`define ZIP     8'h59 //format I
-`define REV     8'h5a //format I
-`define ANDN    8'h5b //format R
-`define ORN     8'h5c //format R
-`define XORN    8'h5d //format R
+`define INT 8'hc0 // format B
+`define IRET 8'hc0 // format B
+`define IRES 8'hc0 // format B
+`define WAIT 8'hc0 // format B
+`define LCTRL 8'ha0 // format F
+`define SCTRL 8'ha1 // format F
+`define FLAG 8'h80 // format I
+`define ADDIP 8'h81 // format I
+`define JAL 8'h82 // format I
+`define JALR 8'h83 // format I
+`define RET 8'h84 // format I
+`define RETR 8'h85 // format I
+`define BRA 8'hc1 // format B
+`define BEQ 8'hc1 // format B
+`define BEZ 8'hc1 // format B
+`define BLT 8'hc1 // format B
+`define BLE 8'hc1 // format B
+`define BLTU 8'hc1 // format B
+`define BLEU 8'hc1 // format B
+`define BNE 8'hc1 // format B
+`define BNZ 8'hc1 // format B
+`define BGE 8'hc1 // format B
+`define BGT 8'hc1 // format B
+`define BGEU 8'hc1 // format B
+`define BGTU 8'hc1 // format B
+`define PUSH 8'h86 // format I
+`define POP 8'h87 // format I
+`define ENTER 8'h88 // format I
+`define LEAVE 8'h89 // format I
+`define CMP 8'h8a // format I
+`define LLI 8'ha2 // format F
+`define LLIP 8'ha2 // format F
+`define LNI 8'he0 // format U
+`define LTI 8'he1 // format U
+`define LW 8'h20 // format E
+`define LH 8'h21 // format E
+`define LHS 8'h22 // format E
+`define LQ 8'h23 // format E
+`define LQS 8'h24 // format E
+`define LB 8'h25 // format E
+`define LBS 8'h26 // format E
+`define SW 8'h27 // format E
+`define SH 8'h28 // format E
+`define SQ 8'h29 // format E
+`define SB 8'h2a // format E
+`define LLW 8'h3f // format E
+`define LLH 8'h3f // format E
+`define LLQ 8'h3f // format E
+`define LLB 8'h3f // format E
+`define SCW 8'h3f // format E
+`define SCH 8'h3f // format E
+`define SCQ 8'h3f // format E
+`define SCB 8'h3f // format E
+`define LFENCE 8'hc3 // format B
+`define SFENCE 8'hc3 // format B
+`define MFENCE 8'hc3 // format B
+`define TFLUSHX 8'hc3 // format B
+`define TFLUSH 8'hc3 // format B
+`define ADDR 8'h40 // format R
+`define ADDI 8'h8b // format I
+`define IADC 8'h41 // format R
+`define UADC 8'h41 // format R
+`define SUBR 8'h42 // format R
+`define SUBI 8'h8c // format I
+`define ISBB 8'h43 // format R
+`define USBB 8'h43 // format R
+`define IMULR 8'h44 // format R
+`define IMULH 8'h45 // format R
+`define IMULI 8'h8c // format I
+`define IDIVR 8'h46 // format R
+`define IDIVI 8'h8e // format I
+`define UMULR 8'h47 // format R
+`define UMULH 8'h48 // format R
+`define UMULI 8'h8f // format I
+`define UDIVR 8'h49 // format R
+`define UDIVI 8'h90 // format I
+`define REMR 8'h4a // format R
+`define REMI 8'h91 // format I
+`define MODR 8'h4b // format R
+`define MODI 8'h92 // format I
+`define ANDR 8'h4c // format R
+`define ANDI 8'h93 // format I
+`define ORR 8'h4d // format R
+`define ORI 8'h94 // format I
+`define NORR 8'h4e // format R
+`define NORI 8'h95 // format I
+`define XORR 8'h4f // format R
+`define XORI 8'h96 // format I
+`define SHL 8'h50 // format R
+`define ASR 8'h51 // format R
+`define LSR 8'h52 // format R
+`define FCMP 8'h2b // format E
+`define FTO 8'h2c // format E
+`define FFROM 8'h2d // format E
+`define FNEG 8'h2e // format E
+`define FABS 8'h2f // format E
+`define FADD 8'h30 // format E
+`define FSUB 8'h31 // format E
+`define FMUL 8'h32 // format E
+`define FDIV 8'h33 // format E
+`define FMA 8'h34 // format E
+`define FSQRT 8'h35 // format E
+`define FMIN 8'h36 // format E
+`define FMAX 8'h37 // format E
+`define FRND 8'h38 // format E
+`define FRNDA 8'h38 // format E
+`define FTRUNC 8'h38 // format E
+`define FCEIL 8'h38 // format E
+`define FFLOOR 8'h38 // format E
+`define FCNV 8'h39 // format E
+`define FCLASS 8'h3a // format E
+`define RORR 8'h53 // format R
+`define RORI 8'h97 // format I
+`define ROLR 8'h54 // format R
+`define ROLI 8'h98 // format I
+`define CSET 8'h55 // format R
+`define CLZ 8'h56 // format R
+`define CTZ 8'h57 // format R
+`define EXT 8'h58 // format R
+`define DEP 8'h59 // format R
+`define ZIP 8'h99 // format I
+`define REV 8'h9a // format I
+`define ANDN 8'h5a // format R
+`define ORN 8'h5b // format R
+`define XORN 8'h5c // format R
